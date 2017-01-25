@@ -163,6 +163,7 @@ peppers_2 = peppers;
 flower_glass_2 = flower_glass;
 
 % show images
+figure(4)
 % show orginal peppers & all RGBs sharpened & luminance sharpened peppers
 subplot(2,3,1)
 imshow(peppers)
@@ -172,9 +173,21 @@ imshow(peppers_1)
 title('RGBs sharpening')
 subplot(2,3,3)
 imshow(peppers_2)
-title('')
+title('luminance sharpening')
+% show orginal flower-glass.tif & all RGBs sharpened & luminance sharpened
+% flower-glass.tif
+subplot(2,3,4)
+imshow(flower_glass)
+subplot(2,3,5)
+imshow(flower_glass_1)
+subplot(2,3,6)
+imshow(flower_glass_2)
 
-
+% save images to file
+imwrite(peppers_1, 'peppers_1.bmp', 'bmp');
+imwrite(peppers_2, 'peppers_2.bmp', 'bmp');
+imwrite(flower_glass_1, 'flower_glass_1.bmp', 'bmp');
+imwrite(flower_glass_2, 'flower_glass_2.bmp', 'bmp');
 
 % QUESTION 04
 % Edge detection. Try at least three different edge operators on one of 
